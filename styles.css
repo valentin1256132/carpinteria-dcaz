@@ -465,30 +465,29 @@ section[id] {
     line-height: 1.4;
 }
 
-/* 1. Hacemos el modal de Roble más ancho */
-#modal-pino .modal-content {
-    width: 50; /* Ocupa casi todo el ancho de la pantalla */
-	height: 50;
-    max-width: 1000px; /* Aumentamos el límite máximo */
-    padding: 20px;
-}
+@media (max-width: 768px) {
+    /* Hacemos que el contenido del modal ocupe casi toda la pantalla */
+    #modal-pino .modal-content {
+        width: 95%;          /* Deja solo un pequeño margen a los lados */
+        padding: 10px;       /* Reduce el espacio interno */
+        margin: 10% auto;    /* Lo separa un poco del borde superior */
+    }
 
-/* 2. Evitamos la distorsión de la imagen */
-#modal-pino .galeria-grid {
-    display: grid; /* Cambiamos de grid a flex para una mejor gestión de imagen única */
-    justify-content: center;
-    align-items: center;
-    gap: 0;
-}
+    /* Forzamos a la galería a no restringir el tamaño */
+    #modal-pino .galeria-grid {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: auto;    /* Quita restricciones de altura */
+    }
 
-#modal-pino .galeria-grid img {
-    width: 80%;      /* Que use todo el ancho disponible del modal */
-    height: auto;     /* ¡CLAVE! El auto evita que se estire o se corte */
-    max-height: 75vh; /* Evita que la imagen sea más alta que la pantalla */
-    object-fit: contain; /* Muestra la imagen completa sin recortar nada */
-    border: 5px solid #8e6f50;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    /* La imagen debe mandar sobre el tamaño */
+    #modal-pino .galeria-grid img {
+        width: 100% !important; /* Obliga a ocupar todo el ancho del modal */
+        height: auto;           /* Evita que se aplaste */
+        max-height: 70vh;       /* Permite que sea alta, pero que no se salga de la pantalla */
+        object-fit: cover;      /* Si quieres que llene el espacio, o 'contain' si quieres ver el mueble completo */
+    }
 }
 
 /* 3. Ajuste del título para que luzca con el lujo que mencionas */
