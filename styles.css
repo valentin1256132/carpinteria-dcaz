@@ -1,0 +1,575 @@
+/* ==========================================================================
+   1. CONFIGURACIÓN INICIAL, RESET Y DESPLAZAMIENTO SUAVE
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Esto activa el efecto de seda al bajar */
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Margen para que el menú de la barra fija no tape el título de las secciones */
+section[id] {
+    scroll-margin-top: 80px; 
+}
+
+/* ==========================================================================
+   2. HEADER, HERO Y LOGO
+   ========================================================================== */
+.container-hero {
+    background-color: #fcfbfa;
+    border-bottom: 1px solid #e8e5e0;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+	max-width: 1200px;             /* O el ancho que prefieras */
+    margin: 0 auto;
+}
+
+.customer-support {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.customer-support i {
+    font-size: 2rem;
+    color: #8e6f50; /* Color café madera */
+}
+
+.content-customer-support {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-logo {
+    flex: 2; /* Le da más importancia al centro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.container-logo i {
+    font-size: 2.8rem;
+    color: #705335;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #2b1d0c;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.container-user {
+    display: flex;
+    gap: 15px;
+    font-size: 1.4rem;
+    color: #555;
+    align-items: center;
+}
+
+/* ==========================================================================
+   3. BARRA DE NAVEGACIÓN (STICKY NAVBAR)
+   ========================================================================== */
+.container-navbar {
+    background-color: #8e6f50; /* Color café madera artesanal */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	width: 100%;
+    padding: 0 20px;
+	margin: 0; /* Elimina márgenes que puedan estar empujando el menú */
+    padding: 0;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu li a {
+    display: block;
+    padding: 18px 22px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.menu li a:hover {
+    background-color: #5c432d; /* Madera oscura al pasar el mouse */
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form input {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+.btn-search {
+    padding: 8px 12px;
+    background-color: #5c432d;
+    border: none;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   4. SECCIÓN INICIO (BANNER PRINCIPAL)
+   ========================================================================== */
+.banner {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('imagenes/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-banner {
+    text-align: center;
+    color: #fff;
+}
+
+.content-banner p {
+    font-size: 1.2rem;
+    color: #dfcbb5;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.content-banner h2 {
+    font-size: 3.8rem;
+    margin: 15px 0 25px 0;
+    line-height: 1.2;
+}
+
+.content-banner a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #8e6f50;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.content-banner a:hover {
+    background-color: #5c432d;
+}
+
+/* ==========================================================================
+   5. CONTENEDORES Y BLOQUES DE INFORMACIÓN (FEATURES)
+   ========================================================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.container-features {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    background: #fdfcfb;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.card-feature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.card-feature i {
+    font-size: 2rem;
+    color: #8e6f50;
+}
+
+.heading-1 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 2.5rem;
+    color: #2b1d0c;
+    margin-bottom: 40px;
+}
+
+/* ==========================================================================
+   6. SECCIÓN CATEGORÍAS (IMÁGENES DE FONDO POR CSS)
+   ========================================================================== */
+.container-categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card-category {
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(142, 111, 80, 0.3);
+}
+
+/* Forzamos textos en blanco y brillantes para que se lean sobre las fotos oscurecidas */
+.card-category p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff !important; 
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+}
+
+.card-category span {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #dfcbb5 !important;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Imágenes específicas cargadas desde CSS para cada tipo de madera */
+.category-pino {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                     url('imagenes/espejo1.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.category-roble {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                     url('imagenes/espejo2.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.category-cedro {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                     url('imagenes/fondopuerta.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* ==========================================================================
+   7. SECCIONES MUEBLES ESPECIALES Y BLOGS (IMÁGENES POR HTML)
+   ========================================================================== */
+.container-products, .container-blogs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.product-card, .blog-card {
+    background: #fff;
+    border: 1px solid #e8e5e0;
+    border-radius: 8px;
+    overflow: hidden; /* Corta los bordes excedentes de la imagen */
+    text-align: center;
+    padding-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: transform 0.3s;
+}
+
+.product-card:hover, .blog-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Estilo unificado para controlar las fotos puestas en el HTML */
+.product-card img, .blog-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Ajusta la proporción de la imagen sin deformarla */
+    display: block;
+}
+
+.product-card h3, .blog-card h3 {
+    margin: 15px 0 10px;
+    color: #4a3319;
+    font-size: 1.3rem;
+}
+
+.product-card p, .blog-card span {
+    color: #777;
+    padding: 0 15px;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   8. FOOTER (PIE DE PÁGINA)
+   ========================================================================== */
+.footer {
+    background-color: #231910; 
+    color: #e5dec9;
+    padding-top: 40px;
+    margin-top: 60px;
+}
+
+.title-footer {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.contact-info ul {
+    list-style: none;
+}
+
+.contact-info ul li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.copyright {
+    border-top: 1px solid #3a2a1c;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* --- ESTILOS DE LA VENTANA MODAL --- */
+.modal {
+    display: none; /* Escondido por defecto */
+    position: fixed;
+    z-index: 2000; /* Por encima del navbar */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8); /* Fondo negro transparente */
+    padding-top: 50px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 900px;
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto; /* Scroll si hay muchas fotos */
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #8e6f50;
+}
+
+.modal-content h2 {
+    color: #4a3319;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* --- GRID DE LA GALERÍA --- */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.galeria-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* 1. Hacemos el modal de Roble más ancho */
+#modal-roble .modal-content {
+    width: 95%; /* Ocupa casi todo el ancho de la pantalla */
+    max-width: 1300px; /* Aumentamos el límite máximo */
+    padding: 20px;
+}
+
+/* 2. Evitamos la distorsión de la imagen */
+#modal-roble .galeria-grid {
+    display: flex; /* Cambiamos de grid a flex para una mejor gestión de imagen única */
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+}
+
+#modal-roble .galeria-grid img {
+    width: 100%;      /* Que use todo el ancho disponible del modal */
+    height: auto;     /* ¡CLAVE! El auto evita que se estire o se corte */
+    max-height: 75vh; /* Evita que la imagen sea más alta que la pantalla */
+    object-fit: contain; /* Muestra la imagen completa sin recortar nada */
+    border: 5px solid #8e6f50;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* 3. Ajuste del título para que luzca con el lujo que mencionas */
+#modal-pino h2 {
+    font-style: italic;
+    font-family: 'Georgia', serif;
+    color: #2b1d0c;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    line-height: 1.4;
+}
+
+/* 1. Hacemos el modal de Roble más ancho */
+#modal-pino .modal-content {
+    width: 50; /* Ocupa casi todo el ancho de la pantalla */
+	height: 50;
+    max-width: 1000px; /* Aumentamos el límite máximo */
+    padding: 20px;
+}
+
+/* 2. Evitamos la distorsión de la imagen */
+#modal-pino .galeria-grid {
+    display: flex; /* Cambiamos de grid a flex para una mejor gestión de imagen única */
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+}
+
+#modal-pino .galeria-grid img {
+    width: 25%;      /* Que use todo el ancho disponible del modal */
+    height: auto;     /* ¡CLAVE! El auto evita que se estire o se corte */
+    max-height: 75vh; /* Evita que la imagen sea más alta que la pantalla */
+    object-fit: contain; /* Muestra la imagen completa sin recortar nada */
+    border: 5px solid #8e6f50;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* 3. Ajuste del título para que luzca con el lujo que mencionas */
+#modal-pino h2 {
+    font-style: italic;
+    font-family: 'Georgia', serif;
+    color: #2b1d0c;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    line-height: 1.4;
+}
+/* Estilo para el video dentro de la tarjeta */
+.video-proyecto {
+    width: 150%;       /* Ocupa todo el ancho de la tarjeta */
+    height: 250px;     /* Mantenemos la altura que tenían tus imágenes */
+    object-fit: cover; /* ¡CLAVE! Hace que el video llene el área sin distorsionarse */
+    display: block;
+    border-bottom: 2px solid #8e6f50; /* Línea decorativa color madera */
+}
+
+/* Opcional: Si quieres que al pasar el mouse se vea un poco más grande */
+.blog-card:hover .video-proyecto {
+    filter: brightness(1.1);
+    transition: 0.3s;
+}
+/* Ajustamos la tarjeta del blog para que no sea tan ancha */
+.blog-card {
+    max-width: 600px; /* Puedes bajar este número (ej. 350px) para hacerlo más pequeño */
+    margin: 0 auto;  /* Lo centra en su sección */
+    overflow: hidden;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Ajustamos el video para que se adapte al nuevo ancho */
+.video-proyecto {
+    width: 90%;       /* Ocupa el 100% de los 400px del contenedor */
+    height: auto;      /* Deja que la altura se ajuste sola para no distorsionar */
+    aspect-ratio: 16 / 9; /* Mantiene la forma clásica de video (panorámico) */
+    object-fit: cover;
+    display: block;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 1200px; /* Alineado con el resto de tu contenido */
+    margin: 0 auto;
+    border: 5px solid #8e6f50; /* Marco color madera */
+    border-radius: 12px;
+    overflow: hidden; /* Para que las esquinas del mapa se vean redondeadas */
+    line-height: 0;   /* Quita espacios extra abajo del mapa */
+}
+
+.map-container iframe {
+    width: 100%;      /* Hace que el mapa sea responsivo */
+    filter: grayscale(0.2) contrast(1.1); /* Opcional: le da un toque más elegante */
+}
+
+/* --- BOTÓN FLOTANTE DE WHATSAPP --- */
+.btn-whatsapp {
+    position: fixed;
+    bottom: 30px;           /* Distancia desde abajo */
+    right: 30px;            /* Distancia desde la derecha */
+    background-color: #25d366; /* Verde oficial de WhatsApp */
+    color: #fff;            /* Icono en color blanco */
+    border-radius: 50%;     /* Hace el botón completamente redondo */
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;        /* Tamaño del icono */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 3000;          /* Lo mantiene por encima de cualquier otro elemento (incluso modales) */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+}
+
+/* Efecto al pasar el mouse por encima */
+.btn-whatsapp:hover {
+    background-color: #128c7e; /* Un tono verde más oscuro */
+    transform: scale(1.1);     /* Crece un 10% suavemente */
+}

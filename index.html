@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maderas & Diseños - Carpintería Fina</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Font Awesome para los nuevos iconos de herramientas -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+</head>
+<body>
+    <header>
+        <div class="container-hero">
+            <div class="container hero">
+                <div class="customer-support">
+                    <!-- Icono cambiado a un martillo/regla para soporte técnico -->
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    <div class="content-customer-support">
+                        <span class="text">Cotizaciones y Diseños</span>
+                        <span class="number">246-121-5383</span>
+                    </div>
+                </div>
+
+                <!-- LOGO DE LA CARPINTERÍA -->
+                <div class="container-logo">
+                    <i class="fa-solid fa-tree"></i> <!-- Icono de árbol/madera -->
+                    <h1 class="logo"><a href="#">CARPINTERIA D" CAZ</a></h1>
+                </div>
+
+                <div class="container-user">
+                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-couch"></i> <!-- Icono cambiado a un mueble -->
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="container-navbar">
+            <nav class="navbar container">
+                <i class="fa-solid fa-bars"></i>
+                <ul class="menu">
+                    <!-- Mantenemos las anclas (#) funcionando exactamente igual -->
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#moca-helado">Trabajos Realizados</a></li>
+                    <li><a href="#expreso">Espejos</a></li>
+                    <li><a href="#capuchino">Puertas</a></li>
+                    <li><a href="#especiales">Novedades</a></li>
+                    <li><a href="#blog">Proyectos</a></li>
+					<li><a href="#ubicacion">Ubicación</a></li>
+                </ul>
+
+               
+            </nav>
+        </div>
+    </header>
+
+    <!-- SECCIÓN INICIO (BANNER) -->
+    <section id="inicio" class="banner">
+        <div class="content-banner">
+            <p>Muebles a la medida y acabados Premium</p>
+            <h2>Madera 100% Sólida <br />Diseño Artesanal</h2>
+            <a href="#especiales">Ver Catálogo</a>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <!-- SECCIÓN CARACTERÍSTICAS -->
+        <section class="container container-features">
+            <div class="card-feature">
+                <i class="fa-solid fa-truck-fast"></i>
+                <div class="feature-content">
+                    <span>Envío e Instalación</span>
+                    <p>En proyectos completos</p>
+                </div>
+            </div>
+            <div class="card-feature">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div class="feature-content">
+                    
+                    <p>Contra humedad y plagas</p>
+                </div>
+            </div>
+            <div class="card-feature">
+                <i class="fa-solid fa-pencil"></i>
+               
+            </div>
+            <div class="card-feature">
+                <i class="fa-solid fa-hammer"></i>
+                <div class="feature-content">
+                    <span>Creamos muebles que cuentan historias y construyen hogares.</span>
+                    <p>COMUNICATE al 246-121-5383</p>
+                </div>
+            </div>
+        </section>
+<!-- ... (Todo tu header y banner inicial se quedan igual) ... -->
+
+        <!-- SECCIÓN CATEGORÍAS DE MADERA -->
+        <section class="container top-categories">
+            <h1 class="heading-1">Nuestros Trabajos</h1>
+            <div class="container-categories">
+                <!-- Les dejamos sus IDs para que los botones sigan funcionando -->
+                <div id="moca-helado" class="card-category category-pino">
+                    <p>Trabajos realizados</p>
+                    <span>Ver Trabajos</span>
+                </div>
+                <div id="expreso" class="card-category category-roble">
+                    <p>Espejos hechos a tu medida</p>
+                    <span>Ver Espejos</span>
+                </div>
+                <div id="capuchino" class="card-category category-cedro">
+                    <p>Puertas a tu estilo</p>
+                    <span>Ver Puertas</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN ESPECIALES (MUEBLES) -->
+        <section id="especiales" class="container specials">
+            <h1 class="heading-1">"El toque ideal para tu espacio de convivencia."</h1>
+            <div class="container-products">
+                <!-- AGREGAMOS TARJETAS CON IMÁGENES EN HTML -->
+                <div class="product-card">
+                    <img src="imagenes/foto.jpeg" alt="Cocina Integral">
+                    <h3>HERMOSOS MUEBLES</h3>
+                    <p>Diseños a la medida para tu hogar.</p>
+                </div>
+                <div class="product-card">
+                    <img src="imagenes/mesa.jpeg" alt="Comedor de Roble">
+                    <h3>MESAS DE CENTRO</h3>
+                    <p>Madera de calidad con acabados finos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN BLOG / PROYECTOS -->
+       <section id="blog" class="container blogs">
+    <h1 class="heading-1">Últimos Proyectos Terminados</h1>
+    <div class="container-blogs">
+        <div class="blog-card">
+            <video class="video-proyecto" controls muted loop>
+                <source src="imagenes/video.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+            <h3>Instalación de perchero</h3>
+            <span>Mayo 2026</span>
+        </div>
+    </div>
+</section>
+    </main>
+
+<!-- ... (El resto del footer se queda igual) ... -->
+
+    <footer class="footer">
+        <div class="container container-footer">
+            <div class="menu-footer">
+                <div class="contact-info">
+                    <p class="title-footer">Taller de Carpintería</p>
+                    <ul>
+                        <li>Dirección: 4 Prol. Hidalgo, La Magdalena Tlaltelulco; Tlaxcala</li>
+                        <li>Teléfono: 246-121-5383 o al
+							          246-158-2813
+						</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright container">
+            <p>Desarrollado por Osval &copy; 2026</p>
+        </div>
+    </footer>
+	<div id="modal-pino" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="cerrarModal('modal-pino')">&times;</span>
+        <h2>Hechos con madera de excelente calidad</h2>
+        <div class="galeria-grid">
+            <img src="imagenes/trabajos1.jpeg" alt="Trabajo 1">
+            <img src="imagenes/trabajos.jpeg" alt="Trabajo 2">
+            <img src="imagenes/trabajos3.jpeg" alt="Trabajo 3">
+        </div>
+    </div>
+</div>
+
+<div id="modal-roble" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="cerrarModal('modal-roble')">&times;</span>
+        <h2>"El lujo está en los detalles" madera seleccionada a mano y un acabado impecable. </h2>
+        <div class="galeria-grid">
+            <img src="imagenes/espejos.jpeg" alt="Roble 1">
+            
+        </div>
+    </div>
+</div>
+
+<div id="modal-cedro" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="cerrarModal('modal-cedro')">&times;</span>
+        <h2>"La primera impresión comienza aquí"</h2>
+        <div class="galeria-grid">
+            <img src="imagenes/puerta.jpeg" alt="Trabajo 1">
+            <img src="imagenes/puerta1.jpeg" alt="Trabajo 2">
+            <img src="imagenes/puerta3.jpeg" alt="Trabajo 3">
+        </div>
+    </div>
+</div>
+
+<section id="ubicacion" class="container">
+    <h1 class="heading-1">Visita nuestro taller</h1>
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3766.3069613975317!2d-98.19544378959394!3d19.269012881900533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfdc3920de837f%3A0x772006b66deef128!2sProl.%20Hidalgo%204%2C%20Yoalcoatl%2C%2090835%20La%20Magdalena%20Tlaltelulco%2C%20Tlax.!5e0!3m2!1ses-419!2smx!4v1780276418290!5m2!1ses-419!2smx" 
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</section>
+
+<script>
+    // Al dar clic en las tarjetas de madera
+    document.querySelector('.category-pino').onclick = () => document.getElementById('modal-pino').style.display = 'block';
+    document.querySelector('.category-roble').onclick = () => document.getElementById('modal-roble').style.display = 'block';
+    document.querySelector('.category-cedro').onclick = () => document.getElementById('modal-cedro').style.display = 'block';
+
+    function cerrarModal(id) {
+        document.getElementById(id).style.display = 'none';
+    }
+
+    // Cerrar si hacen clic fuera de la ventana blanca
+    window.onclick = function(event) {
+        if (event.target.className === 'modal') {
+            event.target.style.display = "none";
+        }
+    }
+</script>
+
+<!-- BOTÓN FLOTANTE DE WHATSAPP -->
+<a href="https://wa.me/522461215383?text=Hola,%20me%20gustaría%20cotizar%20un%20mueble%20en%20Carpintería%20D'%20CAZ" 
+   class="btn-whatsapp" 
+   target="_blank" 
+   rel="noopener noreferrer">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+</body>
+</html>
