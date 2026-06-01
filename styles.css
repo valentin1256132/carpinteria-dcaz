@@ -573,3 +573,28 @@ section[id] {
     background-color: #128c7e; /* Un tono verde más oscuro */
     transform: scale(1.1);     /* Crece un 10% suavemente */
 }
+
+img, video, iframe {
+    max-width: 100%;
+    height: auto; /* Mantiene la proporción para que no se estiren */
+}
+
+/* Reglas para pantallas de menos de 768px (Celulares) */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column; /* Apila el logo y el soporte uno arriba de otro */
+        text-align: center;
+    }
+
+    .container-blogs, .galeria-grid {
+        grid-template-columns: 1fr; /* Una sola columna para que las fotos se vean grandes */
+    }
+
+    .menu {
+        display: none; /* Opcional: podrías ocultar el menú largo y usar un icono */
+    }
+    
+    .heading-1 {
+        font-size: 1.5rem; /* Reduce un poco el tamaño de los títulos */
+    }
+}
