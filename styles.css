@@ -475,14 +475,14 @@ section[id] {
 
 /* 2. Evitamos la distorsión de la imagen */
 #modal-pino .galeria-grid {
-    display: flex; /* Cambiamos de grid a flex para una mejor gestión de imagen única */
+    display: grid; /* Cambiamos de grid a flex para una mejor gestión de imagen única */
     justify-content: center;
     align-items: center;
     gap: 0;
 }
 
 #modal-pino .galeria-grid img {
-    width: 25%;      /* Que use todo el ancho disponible del modal */
+    width: 80%;      /* Que use todo el ancho disponible del modal */
     height: auto;     /* ¡CLAVE! El auto evita que se estire o se corte */
     max-height: 75vh; /* Evita que la imagen sea más alta que la pantalla */
     object-fit: contain; /* Muestra la imagen completa sin recortar nada */
